@@ -1,21 +1,33 @@
-/* Global reset */
+/* =========================
+   GLOBAL RESET
+========================= */
 * {
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
-/* Page background */
+/* =========================
+   PAGE LOCK (NO SCROLL)
+========================= */
+html,
 body {
-  margin: 80px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* 🔒 Disable page scroll */
   background: linear-gradient(135deg, #eef2ff, #f8fafc);
-  min-height: 100vh;
 }
 
-/* Chat container */
+/* =========================
+   CHAT CONTAINER (FIXED)
+========================= */
 .chat-container {
   width: 700px;
   height: 620px;
-  margin: 40px auto;
+  position: fixed; /* 🔒 Fixed chatbot */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -24,7 +36,9 @@ body {
   overflow: hidden;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 .chat-header {
   padding: 15px;
   background: #0b5ed7;
@@ -34,15 +48,19 @@ body {
   font-size: 16px;
 }
 
-/* Chat body */
+/* =========================
+   CHAT BODY (ONLY SCROLL)
+========================= */
 .chat-body {
   flex: 1;
   padding: 14px;
   background: #f9fafb;
-  overflow-y: auto;
+  overflow-y: auto; /* ✅ Only this scrolls */
 }
 
-/* Messages */
+/* =========================
+   MESSAGES
+========================= */
 .chat-message {
   max-width: 75%;
   margin-bottom: 12px;
@@ -50,7 +68,8 @@ body {
   font-size: 14px;
   line-height: 1.5;
   border-radius: 14px;
-  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
   animation: fadeIn 0.25s ease-in-out;
 }
 
@@ -76,12 +95,15 @@ body {
   opacity: 0.7;
 }
 
-/* Footer */
+/* =========================
+   FOOTER
+========================= */
 .chat-footer {
   display: flex;
   padding: 12px;
   border-top: 1px solid #ddd;
   gap: 8px;
+  background: #ffffff;
 }
 
 .chat-footer input {
@@ -113,7 +135,15 @@ body {
   background: #0949a6;
 }
 
-/* Scrollbar */
+/* Disabled button (optional) */
+.chat-footer button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
 .chat-body::-webkit-scrollbar {
   width: 6px;
 }
@@ -123,7 +153,9 @@ body {
   border-radius: 10px;
 }
 
-/* Animation */
+/* =========================
+   ANIMATION
+========================= */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -135,16 +167,13 @@ body {
   }
 }
 
-/* Mobile responsive */
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 @media (max-width: 480px) {
   .chat-container {
-    width: 95%;
-    height: 95vh;
-    margin: 10px auto;
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
   }
-}
-
-.chat-message {
-  word-break: break-word;
-  white-space: pre-wrap;
 }
