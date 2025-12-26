@@ -13,7 +13,7 @@ body {
 
 /* Chat container */
 .chat-container {
-  width: 420px;
+  width: 650px;
   height: 620px;
   margin: 40px auto;
   background: #ffffff;
@@ -142,4 +142,9 @@ body {
     height: 95vh;
     margin: 10px auto;
   }
+}
+
+.chat-message {
+  word-break: break-word;
+  white-space: pre-wrap;
 }
