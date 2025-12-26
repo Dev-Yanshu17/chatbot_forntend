@@ -6,14 +6,14 @@
 
 /* Page background */
 body {
-  margin: 0;
+  margin: 80px;
   background: linear-gradient(135deg, #eef2ff, #f8fafc);
   min-height: 100vh;
 }
 
 /* Chat container */
 .chat-container {
-  width: 650px;
+  width: 700px;
   height: 620px;
   margin: 40px auto;
   background: #ffffff;
