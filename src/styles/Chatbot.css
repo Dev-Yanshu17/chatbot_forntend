@@ -177,3 +177,19 @@ body {
     border-radius: 0;
   }
 }
+
+/* PDF Export Button */
+.pdf-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  background: #ffffff;
+  color: #0b5ed7;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pdf-btn:hover {
+  background: #e7ecff;
+}
